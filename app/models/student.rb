@@ -13,6 +13,10 @@ class Student < User
     end
   end
 
+  def inform_student_registration
+    StudentMailer.student_registered(self).deliver
+  end
+
   private
 
   def inform_student_approved

@@ -11,5 +11,9 @@ Rails.application.routes.draw do
     root to: "dashboard#show", as: :authenticated_root
   end
 
-  resources :students, except: [:new, :create, :destroy]
+  resources :students, except: [:new, :create, :destroy] do
+    collection do
+      post :import
+    end
+  end
 end

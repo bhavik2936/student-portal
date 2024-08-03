@@ -25,6 +25,8 @@ class User < ApplicationRecord
   end
 
   def inform_admin
+    return if approved?
+
     AdminMailer.new_student_registered(email).deliver
   end
 end
