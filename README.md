@@ -1,24 +1,31 @@
-# README
+# Student Portal
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Run Locally
 
-Things you may want to cover:
+Please make sure to install ruby version `3.2.2` prior to installing dependencies.
 
-* Ruby version
+```bash
+bundle install
+```
 
-* System dependencies
+Copy environment variables file and modify accordingly.
 
-* Configuration
+```bash
+cp .env.example .env
+```
 
-* Database creation
+Setup database, which will also populate admin profile.
 
-* Database initialization
+```bash
+bin/rails db:setup
+```
 
-* How to run the test suite
+Start the server
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+bin/rails server
+```
 
-* Deployment instructions
+## Additional Data
 
-* ...
+Please find the [CSV file](public/students-1970-01-01.csv) as a reference of upload file for import functionality.
