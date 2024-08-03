@@ -15,6 +15,9 @@ gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
+# Use devise for authentication
+gem "devise"
+
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 
@@ -54,6 +57,12 @@ group :development, :test do
 end
 
 group :development do
+  # Utilize environment variables from .env file
+  gem "dotenv"
+
+  # Use letter-opener to view email in browser session
+  gem "letter_opener"
+
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
@@ -63,4 +72,3 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
-
