@@ -23,6 +23,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_03_062332) do
     t.boolean "approved", default: false, null: false
     t.string "first_name", limit: 255
     t.string "last_name", limit: 255
+    t.string "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["approved"], name: "index_users_on_approved"

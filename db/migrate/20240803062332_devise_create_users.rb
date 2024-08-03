@@ -21,6 +21,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       t.string :first_name, limit: 255
       t.string :last_name, limit: 255
 
+      # Single-Table Inheritance
+      t.string :type, default: "Student"
+
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
       # t.datetime :current_sign_in_at
