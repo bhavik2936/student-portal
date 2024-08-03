@@ -15,4 +15,9 @@ class StudentMailer < ApplicationMailer
     @student = student
     mail(to: student.email, subject: 'Good Morning')
   end
+
+  def birthday_greet(student)
+    @student = student
+    mail(to: student.email, subject: 'Happy Birthday')
+  end
 end
