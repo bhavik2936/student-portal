@@ -2,7 +2,7 @@
   <h1>Greetings, <%=current_user.full_name%></h1>
 
   <% if current_user.admin? %>
-    <p></p>
+    <p>Access <%= link_to "Student Dashboard", students_path %></p>
   <% else %>
     <p></p>
   <% end %>

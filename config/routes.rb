@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   authenticated :user do
     root to: "dashboard#show", as: :authenticated_root
   end
+
+  resources :students, except: [:new, :create, :destroy]
 end
