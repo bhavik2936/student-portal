@@ -10,4 +10,9 @@ class StudentMailer < ApplicationMailer
     @student = student
     mail(to: student.email, subject: 'Profile Created by Admin')
   end
+
+  def daily_greet(student)
+    @student = student
+    mail(to: student.email, subject: 'Good Morning')
+  end
 end
