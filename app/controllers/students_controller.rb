@@ -6,6 +6,11 @@ class StudentsController < ApplicationController
     @students = Student.all
 
     policy_scope(@students)
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @students.to_csv, filename: "students-#{Date.today}.csv" }
+    end
   end
 
   def show
