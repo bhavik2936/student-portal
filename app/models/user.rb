@@ -7,6 +7,7 @@ class User < ApplicationRecord
   include UserHelper
 
   before_validation :set_user_type
+  after_create :inform_admin
 
   # Allow Login only if approved to access the platform
   def active_for_authentication?
@@ -21,5 +22,9 @@ class User < ApplicationRecord
 
   def set_user_type
     self.type = TYPE_STUDENT unless type
+  end
+
+  def inform_admin
+    AdminMailer.new_student_registered(email).deliver
   end
 end
